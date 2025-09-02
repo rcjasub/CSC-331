@@ -32,11 +32,3 @@ public:
 private:
     nodeType<type> *current; // pointer to point to the current node in the linked list
 };
-<<<<<<< HEAD
-
-template <class type>
-inline linkedListIterator<type>::linkedListIterator()
-{
-}
-=======
->>>>>>> c4ddfcda96323e2ae4a08b0b73c2a6cb02b3f343
