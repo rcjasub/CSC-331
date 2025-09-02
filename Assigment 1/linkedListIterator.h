@@ -32,4 +32,7 @@ nodeType<type>* current; //pointer to point to the current node in the linked li
 
 };
 
-
+template <class type>
+inline linkedListIterator<type>::linkedListIterator()
+{
+}
