@@ -1,38 +1,42 @@
+#pragma once
+#include "nodeType.h"
+
 template <class type>
 class linkedListIterator
 {
 public:
+    linkedListIterator();
+    // Default constructor
+    // Postcondition: current is set to nullptr
 
-linkedListIterator();
-//Default constructor
-//postcondition: current is set to nullptr
+    linkedListIterator(nodeType<type> *ptr);
+    // Constructor with parameter
+    // Postcondition: current is set to ptr
 
-linkedListIterator(nodeType<type>* ptr);
-//Constructor with parameter
-//Postcondition: current is set to ptr
+    type operator*();
+    // Function to overload the dereferencing operator *
+    // Postcondition: Returns the info contained in the node
 
-type operator*();
-//Function to overload the dereferencing operator *
-//Postcondition: Returns the info contained in the node
+    linkedListIterator<type> operator++();
+    // Overload the pre-increment operator
+    // Postcondition: The iterator is advanced to the next node
 
-linkedListIterator<type> operator++();
-//Overload the pre-increment operator
-//Postcondition: The iterator is advanced to the next node
+    bool operator==(const linkedListIterator<type> &right) const;
+    // Overload the equality operator
+    // Postcondition: Returns true if this iterator is equal to the right iterator, otherwise it returns false
 
-bool operator==(const linkedListIterator<type>& right) const;
-//Overload the equality operator
-//Postcondition: Returns true if this iterator is equal to the right iterator, otherwise it returns false
-
-bool operator!=(const linkedListIterator<type>& right) const;
-//Overload the not equal to operator
-//Postcondition: Returns true if this iterator is not equal to the right iterator, otherwise it returns false
+    bool operator!=(const linkedListIterator<type> &right) const;
+    // Overload the not equal to operator
+    // Postcondition: Returns true if this iterator is not equal to the right iterator, otherwise it returns false
 
 private:
-nodeType<type>* current; //pointer to point to the current node in the linked list
-
+    nodeType<type> *current; // pointer to point to the current node in the linked list
 };
+<<<<<<< HEAD
 
 template <class type>
 inline linkedListIterator<type>::linkedListIterator()
 {
 }
+=======
+>>>>>>> c4ddfcda96323e2ae4a08b0b73c2a6cb02b3f343

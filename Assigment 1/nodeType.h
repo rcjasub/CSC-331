@@ -1,6 +1,7 @@
+#pragma once
 template <class Type>
 struct nodeType
 {
-   Type info; //holds the data
-   nodeType<Type>* link; //pointer to the next node
+   Type value; //holds the data
+   nodeType<Type>* next; //pointer to the next node
 };
