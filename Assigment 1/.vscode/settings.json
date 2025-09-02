@@ -9,6 +9,10 @@
         "xmemory": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "iterator": "cpp",
+        "iostream": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp"
     }
 }

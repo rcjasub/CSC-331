@@ -9,9 +9,9 @@ public:
     const LinkListType<Type> &operator=(const LinkListType<Type> &other);
     // Overload the assignment operator
 
-    void initiallizeList();
+    void initializeList();
     // Initialize the list to an empty state
-    // Postcondition: first = nullptr, last = nullptr, count = 0
+    // Postcondition: first = nullptr, last = nullptr, length = 0
 
     bool isEmptyList() const;
     // Function to determine whether the list is empty
@@ -21,17 +21,17 @@ public:
     // Function to output the data contained in each node
     // Postcondition: none
 
-    void length() const;
+    int getLength() const;
     // Function to return the number of nodes in the list
 
     void destroyList();
     // Function to delete all the nodes from the list
 
-    Type front() const;
+    Type getHead() const;
     // Function to return the first element of the list
     // Precondition: The list must exist and must not be empty
 
-    Type back() const;
+    Type getTail() const;
     // Function to return the last element of the list
     // Precondition: The list must exist and must not be empty
 
@@ -58,10 +58,10 @@ public:
     // Function to return an iterator at the end of the linked list
     // Postcondition: current is set to nullptr
 
-    linklidtType();
+    LinkListType();
     // Default constructor
     // initializes the list to an empty state
-    // Postcondition: first = nullptr, last = nullptr, count = 0
+    // Postcondition: first = nullptr, last = nullptr, length = 0
 
     LinkListType(const LinkListType<Type> &otherList);
     // Copy constructor
@@ -78,3 +78,4 @@ private:
     void copyList(const LinkListType<Type> &otherList);
     // Function to make a copy of otherList
 };
+
