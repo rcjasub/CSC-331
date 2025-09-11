@@ -32,3 +32,5 @@ public:
 private:
     nodeType<type> *current; // pointer to point to the current node in the linked list
 };
+
+#include "linkedListIterator.tpp"

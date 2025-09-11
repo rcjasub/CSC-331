@@ -79,3 +79,5 @@ private:
     // Function to make a copy of otherList
 };
 
+#include "linkedListType.tpp"
+

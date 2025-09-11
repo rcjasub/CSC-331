@@ -22,7 +22,7 @@ LinkListType<Type>::LinkListType()
 {
     head = nullptr;
     tail = nullptr;
-    length = 0;
+    count = 0;
 }
 
 template <class Type>
@@ -142,7 +142,7 @@ void LinkListType<Type>::destroyList()
 
     // reset the member variables
     tail = nullptr;
-    length = 0;
+    count = 0;
 }
 
 template <class Type>
