@@ -2,6 +2,9 @@
 template <class Type>
 struct nodeType
 {
-   Type value; //holds the data
-   nodeType<Type>* next; //pointer to the next node
+   Type value;
+   nodeType<Type> *next;
+
+   nodeType() : next(nullptr) {}                               // default constructor
+   nodeType(const Type &value) : value(value), next(nullptr) {} // value constructor
 };
