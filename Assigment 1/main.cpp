@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "unorderedLinkedList.h"
+#include "orderedLinkList.h"
 using namespace std;
 
 int main()
@@ -46,6 +47,45 @@ int main()
 
     cout << "Total: $" << total << endl;
     cout << "SubTotal: $" << subtotal << endl;
+
+    cout << endl;
+    cout << "#######################################################################" << endl;
+    cout << endl;
+
+    orderedLinkList<int> Orderedlist;
+
+    Orderedlist.insert(10);
+    Orderedlist.insert(2);
+    Orderedlist.insert(8);
+    Orderedlist.insert(5);
+    Orderedlist.insert(15);
+    Orderedlist.insert(1);
+    Orderedlist.insert(8); // duplicate example
+    Orderedlist.insert(22);
+    Orderedlist.insert(84);
+
+    cout << "Ordered list after insertions: ";
+    Orderedlist.print();
+    cout << endl;
+
+    // Search for a value
+    cout << "Searching for 5: " << (Orderedlist.search(5) ? "Found" : "Not found") << endl;
+    cout << "Searching for 20: " << (Orderedlist.search(20) ? "Found" : "Not found") << endl;
+
+    // Delete a few values
+    Orderedlist.deleteNode(8);
+    Orderedlist.deleteNode(1);
+    Orderedlist.deleteNode(15);
+
+    cout << "Ordered list after deletions: ";
+    Orderedlist.print();
+    cout << endl;
+
+    // Head, tail, and length via public functions
+    cout << "Head: " << Orderedlist.getHead() << endl;
+    cout << "Tail: " << Orderedlist.getTail() << endl;
+    cout << "Length: " << Orderedlist.getLength() << endl;
+
     cout << "Submitted by: Jocsan Rodriguez" << endl;
 
     return 0;

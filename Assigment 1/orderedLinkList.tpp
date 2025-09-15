@@ -1,8 +1,52 @@
+#include "orderedLinkList.h"
 #include <iostream>
-#include "unorderedLinkedList.h"
 
 template <class Type>
-inline bool unorderedLinkedList<Type>::search(const Type &searchItem) const
+inline void orderedLinkList<Type>::insert(const Type &newItem)
+{
+    nodeType<Type> *newNode = new nodeType<Type>(newItem);
+
+    // if the linkList is empty
+    if (this->head == nullptr)
+    {
+        this->head = newNode;
+        this->tail = newNode;
+        this->count++;
+        return;
+    }
+
+    // insert at front
+    if (newItem < this->head->value)
+    {
+        newNode->next = this->head;
+        this->head = newNode;
+        this->count++;
+        return;
+    }
+
+    // insert in the middle or end
+    nodeType<Type> *curr = this->head;
+    nodeType<Type> *trail = nullptr;
+
+    while (curr != nullptr && curr->value < newItem)
+    {
+        trail = curr;
+        curr = curr->next;
+    }
+
+    newNode->next = curr;
+    trail->next = newNode;
+
+    if (curr == nullptr)
+    {
+        this->tail = newNode;
+    }
+
+    this->count++;
+}
+
+template <class Type>
+inline bool orderedLinkList<Type>::search(const Type &searchItem) const
 {
     nodeType<Type> *current = this->head;
 
@@ -20,7 +64,7 @@ inline bool unorderedLinkedList<Type>::search(const Type &searchItem) const
 }
 
 template <class Type>
-inline void unorderedLinkedList<Type>::insertFirst(const Type &newItem)
+inline void orderedLinkList<Type>::insertFirst(const Type &newItem)
 {
     nodeType<Type> *newNode = new nodeType<Type>(newItem);
 
@@ -31,6 +75,7 @@ inline void unorderedLinkedList<Type>::insertFirst(const Type &newItem)
     }
     else
     {
+
         newNode->next = this->head;
         this->head = newNode;
     }
@@ -39,13 +84,14 @@ inline void unorderedLinkedList<Type>::insertFirst(const Type &newItem)
 }
 
 template <class Type>
-inline void unorderedLinkedList<Type>::insertLast(const Type &newItem)
+inline void orderedLinkList<Type>::insertLast(const Type &newItem)
 {
     nodeType<Type> *newNode = new nodeType<Type>(newItem);
 
     if (this->head == nullptr)
     {
-        this->head = this->tail = newNode;
+        this->head = newNode;
+        this->tail = newNode;
     }
     else
     {
@@ -57,13 +103,15 @@ inline void unorderedLinkedList<Type>::insertLast(const Type &newItem)
 }
 
 template <class Type>
-inline void unorderedLinkedList<Type>::deleteNode(const Type &deleteItem)
+inline void orderedLinkList<Type>::deleteNode(const Type &deleteItem)
 {
     nodeType<Type> *curr = this->head;
     nodeType<Type> *prev = nullptr;
 
     if (this->head == nullptr)
+    {
         return;
+    }
 
     while (curr != nullptr)
     {
@@ -76,7 +124,7 @@ inline void unorderedLinkedList<Type>::deleteNode(const Type &deleteItem)
                 this->head = curr->next;
                 if (curr == this->tail)
                 {
-                    this->tail = nullptr;   
+                    this->tail = nullptr;
                 }
             }
             else
@@ -94,6 +142,7 @@ inline void unorderedLinkedList<Type>::deleteNode(const Type &deleteItem)
         }
         else
         {
+
             prev = curr;
             curr = curr->next;
         }
