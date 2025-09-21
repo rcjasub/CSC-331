@@ -26,16 +26,16 @@ inline void orderedLinkList<Type>::insert(const Type &newItem)
 
     // insert in the middle or end
     nodeType<Type> *curr = this->head;
-    nodeType<Type> *trail = nullptr;
+    nodeType<Type> *prev = nullptr;
 
     while (curr != nullptr && curr->value < newItem)
     {
-        trail = curr;
+        prev = curr;
         curr = curr->next;
     }
 
     newNode->next = curr;
-    trail->next = newNode;
+    prev->next = newNode;
 
     if (curr == nullptr)
     {
@@ -75,7 +75,6 @@ inline void orderedLinkList<Type>::insertFirst(const Type &newItem)
     }
     else
     {
-
         newNode->next = this->head;
         this->head = newNode;
     }
