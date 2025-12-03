@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jocsan Rodriguez" />
+    <meta name="description" content="A simple form page" />
+    <title>Simple Interest Calculation</title>
+</head>
+
+<body>
+    <h1>Simple Interest Calculation</h1>
+
+    <div>
+        <form id="interestForm">
+            <label for="principal">Principal</label><br>
+            <input type="number" id="principal" name="principal" placeholder="Principal Amount"><br><br>
+
+            <label for="rate">Rate</label><br>
+            <input type="number" id="rate" name="rate" placeholder="Interest Rate"><br><br>
+
+            <label for="time">Time</label><br>
+            <input type="number" id="time" name="time" placeholder="Time in years"><br><br>
+
+            <label for="simpleI">Simple Interest</label><br>
+            <input type="text" id="simpleI" name="simpleI" readonly><br><br>
+
+            <label for="principalPlusI">Principal plus Interest</label><br>
+            <input type="text" id="principalPlusI" name="principalPlusI" readonly><br><br>
+
+            <button type="button" id="calc-btn">Calculate</button>
+        </form>
+    </div>
+    
+    <div>
+        <h3>Sample Data</h3>
+    </div>
+
+    <script src="js/formCalc.js"></script>
+</body>
+
+</html>
